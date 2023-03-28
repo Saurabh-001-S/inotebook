@@ -11,7 +11,9 @@ const Notes = (props) => {
       const refClose = useRef(null)
 
       useEffect(() => {
-            getNotes()
+            if (localStorage.getItem('token')) {
+                  getNotes()
+            }
       })
       const updateNote = (currentNote) => {
             ref.current.click();
